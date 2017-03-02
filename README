@@ -1,0 +1,8 @@
+This builds a small binary that helps set up sandboxed NICOS dry runs.
+It needs to be compiled because scripts with shebang interpreters cannot
+be setuid.
+
+Requires Linux kernel and headers at least version 2.6.32.
+
+For a full description of functionality, see the comment at the top of
+nicos-sandbox-helper.c.
