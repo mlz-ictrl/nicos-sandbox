@@ -16,4 +16,4 @@ clean:
 	rm -f *.o $(EXEC)
 
 install: $(EXEC)
-	install -o root -m 4755 -T $(EXEC) $(DESTDIR)$(PREFIX)/bin/$(EXEC)
+	install -m 4755 -D $(EXEC) $(DESTDIR)$(PREFIX)/bin/$(EXEC)
