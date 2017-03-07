@@ -151,12 +151,16 @@ main(int argc, char **argv)
     id = strtol(argv[3], &ptr, 10);
     if (*argv[3] == '\0' || *ptr != '\0')
         errx(1, "invalid numeric group id '%s' given", argv[3]);
+    if (id == 0)
+        errx(1, "cannot use group id 0");
     if (setgid(id) < 0)
         err(1, "could not set new group id %ld", id);
 
     id = strtol(argv[2], &ptr, 10);
     if (*argv[2] == '\0' || *ptr != '\0')
         errx(1, "invalid numeric user id '%s' given", argv[3]);
+    if (id == 0)
+        errx(1, "cannot use user id 0");
     if (setuid(id) < 0)
         err(1, "could not set new user id %ld", id);
 
